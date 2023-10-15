@@ -49,6 +49,7 @@ def popFirstDate():
 def deleteFirstDate():
     # SQLiteデータベースに接続
     conn = sqlite3.connect('example.db')
+    result = c.fetchone()
     c = conn.cursor()
     c.execute('DELETE FROM my_table WHERE id = ?', (result[0],))
     conn.commit()
